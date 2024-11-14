@@ -1,4 +1,12 @@
-import PropTypes from "prop-types";
+import className from 'classnames'
+
+const finalClassNmae = className('px-1.5',{
+    'bg-blue-500': true,
+    'bg-red-500': true,
+    "text-yellow-500": false
+})
+
+console.log(finalClassNmae); // px-1.5'  bg-blue-500  bg-red-500
 
 function Button({
   children,
@@ -11,17 +19,12 @@ function Button({
   rounded
 }) {
   return (
-    <button>{children}</button>
+    <button className="px-3 py-1.5 border border-blue-600 bg-blue-500 text-white">{children}</button>
   )
 }
 
 Button.propTypes = {
   checkVariationValue: ({primary, secondary, success, warning, danger}) => {
-    // <Button primary>One</Button> : true
-    // <Button primary secondary>One</Button> : false
-
-    // if one the prop isn't used, it's undefined,
-    // (!!undefined) = 0
     const count = Number(!!primary)
     +Number(!!secondary)
     +Number(!!warning)
