@@ -6,19 +6,22 @@ function App() {
   return (
     <>
       <div>
-        <Button onClickProp={onClickHandler} secondary outline rounded>
+        {/* after use ...rest, just use normal event handler */}
+        <Button secondary outline rounded onClick={onClickHandler} >
           <DiApple/>
           One One
         </Button>
       </div>
       <div>
-        <Button danger outline>
+        {/* another event is used here and it will be sent via rest */}
+        <Button danger outline onMouseEnter={onClickHandler}>
           <DiAndroid/>
           Two Two
         </Button>
       </div>
       <div>
-        <Button warning>
+        {/* another event*/}
+        <Button warning onMouseLeave={onClickHandler}>
           <DiAptana/>
           Three
         </Button>

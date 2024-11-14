@@ -10,8 +10,10 @@ function Button({
   danger,
   outline,
   rounded,
-  onClickProp
+  ...rest // take all the REMAINING props out of the prop obj beside the ones listed above, assigned to rest
 }) {
+    console.log(rest);
+    // five Buttons in App, only one has the prop OnClickProp, the other rest Button has empty obj {}
     const classes = twMerge(
         className('flex items-center px-3 py-1.5 border', {
           'border-blue-500 bg-blue-500 text-white': primary,
@@ -30,7 +32,8 @@ function Button({
       );
 
   return (
-    <button onClick={onClickProp} className={classes}>
+    // onClick={rest.onClickProp} : cant assigning one by one, as we want to assign multiple props
+    <button {...rest} className={classes}>
       {children}
     </button>
   );
