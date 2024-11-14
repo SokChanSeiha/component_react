@@ -1,8 +1,23 @@
+import Button from "./Button"
 function App() {
 
   return (
     <>
-    <div className="text-orange-600">hi</div>
+      <div>
+          <Button primary>One</Button>
+      </div>
+      <div>
+          <Button secondary>Two</Button>
+      </div>
+      <div>
+          <Button success>Three</Button>
+      </div>
+      <div>
+          <Button warning>Four</Button>
+      </div>
+      <div>
+          <Button danger>Five</Button>
+      </div>
     </>
   )
 }
