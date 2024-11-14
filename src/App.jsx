@@ -6,22 +6,20 @@ function App() {
   return (
     <>
       <div>
-        {/* after use ...rest, just use normal event handler */}
-        <Button secondary outline rounded onClick={onClickHandler} >
+        {/* want to add a normal styling className, but doesnt work */}
+        <Button secondary outline rounded onClick={onClickHandler} className="mb-5">
           <DiApple/>
           One One
         </Button>
       </div>
       <div>
-        {/* another event is used here and it will be sent via rest */}
-        <Button danger outline onMouseEnter={onClickHandler}>
+        <Button danger outline>
           <DiAndroid/>
           Two Two
         </Button>
       </div>
       <div>
-        {/* another event*/}
-        <Button warning onMouseLeave={onClickHandler}>
+        <Button warning>
           <DiAptana/>
           Three
         </Button>
