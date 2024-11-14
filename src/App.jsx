@@ -1,19 +1,30 @@
 import Button from "./Button"
+import { DiApple, DiAndroid, DiAptana } from "react-icons/di";
+
 function App() {
 
   return (
     <>
       <div>
-          <Button secondary outline rounded>Two</Button>
+        <Button secondary outline rounded>
+          <DiApple/>
+          One One
+        </Button>
       </div>
       <div>
-          <Button danger outline>One</Button>
+        <Button danger outline>
+          <DiAndroid/>
+          Two Two
+        </Button>
       </div>
       <div>
-          <Button warning>Four</Button>
+        <Button warning>
+          <DiAptana/>
+          Three
+        </Button>
       </div>
       <div>
-          <Button secondary outline rounded>Two</Button>
+          <Button secondary outline rounded>Four</Button>
       </div>
       <div>
           <Button primary rounded>Five</Button>
