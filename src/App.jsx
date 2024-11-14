@@ -6,7 +6,6 @@ function App() {
   return (
     <>
       <div>
-        {/* want to add a normal styling className, but doesnt work */}
         <Button secondary outline rounded onClick={onClickHandler} className="mb-5">
           <DiApple/>
           One One
