@@ -2,11 +2,11 @@ import Button from "./Button"
 import { DiApple, DiAndroid, DiAptana } from "react-icons/di";
 
 function App() {
-
+  const onClickHandler = () => console.log("hii");
   return (
     <>
       <div>
-        <Button secondary outline rounded>
+        <Button onClickProp={onClickHandler} secondary outline rounded>
           <DiApple/>
           One One
         </Button>
