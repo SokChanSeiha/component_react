@@ -1,7 +1,7 @@
-import Button from "./components/Button"
+import Button from "../components/Button"
 import { DiApple, DiAndroid, DiAptana } from "react-icons/di";
 
-function App() {
+function ButtonPage() {
   const onClickHandler = () => console.log("hii");
   return (
     <>
@@ -33,4 +33,4 @@ function App() {
   )
 }
 
-export default App
+export default ButtonPage
