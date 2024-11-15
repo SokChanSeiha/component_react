@@ -15,8 +15,8 @@ function App() {
 
   return <Dropdown
     options={options}
-    onSelect={handleSelect} // selecting an option, it takes (optionClicked), as handleSelect(optionClicked)
-    selection={selection} // the selected option : {label: 'selected label', value: 'seleted value'}
+    onChange={handleSelect} 
+    value={selection} 
     />;
 }
 
