@@ -3,7 +3,18 @@ import { FaChevronCircleDown, FaChevronCircleLeft } from "react-icons/fa";
 const Accordion = ({ items }) => {
     const [expandedIndex, setExpandedIndex] = useState(0);
     const handleClick =(nextIndex) => {
-        setExpandedIndex(nextIndex);
+        // if (nextIndex === expandedIndex) {
+        //     setExpandedIndex(-1);
+        // }else{
+        //     setExpandedIndex(nextIndex);
+        // }
+        setExpandedIndex((currentExpandedIndex) => {
+            if (currentExpandedIndex === nextIndex) {
+                return -1;
+            } else {
+                return nextIndex;
+            }
+        })
     };
 
     const renderedItems = items.map((item, index) => {
@@ -21,7 +32,7 @@ const Accordion = ({ items }) => {
                 {item.label}
                 {icon}
             </div>
-              {isExpanded && <div className="bg-gray-200 border-b p-5">{item.content}</div>} 
+              {isExpanded && <div className="bg-gray-100 border-b p-5">{item.content}</div>} 
           </div>
         )
     });
