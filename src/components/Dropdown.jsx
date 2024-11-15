@@ -1,26 +1,34 @@
 import { useState } from "react"
-import { FaStethoscope } from "react-icons/fa";
 
-function Dropdown({options}) {
+function Dropdown({options, selection, onSelect}) {
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => {
-        // setIsOpen((currentIsOpen) => !currentIsOpen); : totally fine
         setIsOpen(!isOpen);
     };
     
     const handleOptionClick = (optionClicked) => {
+        // CLOSR DROPDOWN
         setIsOpen(false);
-        console.log(optionClicked);
+        // WHAT OPTION DID THE USER CLICK ON?
+        onSelect(optionClicked);
     }
 
     const renderedOption = options.map((option) => {
-        return <div onClick={() => handleOptionClick(option)} key={option.value}>
-                    {option.label}
-                </div>
+        return (
+            <div onClick={() => handleOptionClick(option)} key={option.value}>
+                {option.label}
+            </div>
+        )
     });
+
+    let content = 'Select...';
+    if (selection) { // if not null
+        content = selection.label;
+    }
+
     return (
         <div>
-            <div onClick={handleClick}>Select ...</div>
+            <div onClick={handleClick}>{content}</div>
             {isOpen && <div>{renderedOption}</div>}
         </div>
     )
