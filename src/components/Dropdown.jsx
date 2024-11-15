@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Panel from "./Panel";
+import { FaChevronCircleDown } from "react-icons/fa";
 
 function Dropdown({options, value, onChange}) {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,11 +25,14 @@ function Dropdown({options, value, onChange}) {
 
     return (
         <div className="w-48 relative">
-            <div className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full" onClick={handleClick}>
+            <Panel className="flex justify-between items-center cursor-pointer" onClick={handleClick}>
                 {value?.label || 'Selecting ...'}
-            </div>
+                <FaChevronCircleDown className="text-lg"/>
+            </Panel>
             {isOpen &&(
-                <div className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedOption}</div>
+                <Panel className="absolute top-full">
+                    {renderedOption}
+                </Panel>
             )}
         </div>
     )
