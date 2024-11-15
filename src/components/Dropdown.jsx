@@ -7,9 +7,16 @@ function Dropdown({options}) {
         // setIsOpen((currentIsOpen) => !currentIsOpen); : totally fine
         setIsOpen(!isOpen);
     };
+    
+    const handleOptionClick = (optionClicked) => {
+        setIsOpen(false);
+        console.log(optionClicked);
+    }
 
     const renderedOption = options.map((option) => {
-        return <div key={option.value}> {option.label} </div>
+        return <div onClick={() => handleOptionClick(option)} key={option.value}>
+                    {option.label}
+                </div>
     });
     return (
         <div>
