@@ -8,10 +8,13 @@ const Accordion = ({ items }) => {
 
     const renderedItems = items.map((item, index) => {
         const isExpanded = index === expandedIndex;
+        // logic to render icon
+        const icon = <span>{isExpanded ? "DOWN" : "LEFT"}</span>
         return (
           <div key={item.id}>
-              <div onClick={() => handleClick(index)}> {item.label} </div>
-              {/* if isExpanded is false, nothing is being displayed */}
+              <div onClick={() => handleClick(index)}> 
+                {icon}
+                {item.label} </div>
               {isExpanded && <div className="bg-red-500">{item.content}</div>} 
           </div>
         )
