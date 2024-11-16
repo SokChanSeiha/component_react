@@ -1,9 +1,10 @@
 import classNames from 'classnames';
-import {useContext} from 'react';
-import NavigationContext from '../context/navigation';
+import useNavigation from '../hook/use-navigation';
+// import {useContext} from 'react';
+// import NavigationContext from '../context/navigation';
 
 function Link({to, children}) {
-    const {navigate} = useContext(NavigationContext);
+    const {navigate} = useNavigation();
     const usableLinkClassNames = classNames('text-blue-500');
     const handleClick = (event) => {
         // if using one of the keys, 
