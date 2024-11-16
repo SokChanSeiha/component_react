@@ -1,9 +1,21 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Panel from "./Panel";
 import { FaChevronCircleDown } from "react-icons/fa";
 
 function Dropdown({options, value, onChange}) {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const handler = (event) => {
+            console.log(event.target);
+        };
+
+        document.addEventListener('click', handler, true);
+        return () => {
+            document.removeEventListener('click', handler) // tell listener to stop watching for clicks
+        };
+    }, []);
+
     const handleClick = () => {
         setIsOpen(!isOpen);
     };
