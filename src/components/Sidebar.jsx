@@ -9,7 +9,11 @@ function Sidebar() {
 
     const renderedLinks = links.map((link) => {
         // to prop is where navigation go to
-        return <Link key={link.label} to={link.path}>{link.label}</Link>;
+        // className here is prop via Link.jsx
+        return (
+            <Link key={link.label} to={link.path} className="mb-3">
+                {link.label}
+            </Link>);
     });
 
   return (
