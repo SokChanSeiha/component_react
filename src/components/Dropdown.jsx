@@ -8,9 +8,9 @@ function Dropdown({options, value, onChange}) {
 
     useEffect(() => {
         const handler = (event) => {
-            // .contains(event.target) :see whatever element the user just clicks on
-            // if true, which user just click inside dropdown the we add !
-            // finally if user click out of dropdown, we set isOpen to false
+            if (!divEl.current) {
+                return;
+            }
             if (!divEl.current.contains(event.target)) {
                 setIsOpen(false);
             }
