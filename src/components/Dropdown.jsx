@@ -8,7 +8,12 @@ function Dropdown({options, value, onChange}) {
 
     useEffect(() => {
         const handler = (event) => {
-            console.log(divEl.current); // (divEl)it doesnt give a direct reference to the div, but an object the current in it.
+            // .contains(event.target) :see whatever element the user just clicks on
+            // if true, which user just click inside dropdown the we add !
+            // finally if user click out of dropdown, we set isOpen to false
+            if (!divEl.current.contains(event.target)) {
+                setIsOpen(false);
+            }
         };
 
         document.addEventListener('click', handler, true);
