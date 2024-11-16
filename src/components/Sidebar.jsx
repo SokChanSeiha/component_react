@@ -11,13 +11,18 @@ function Sidebar() {
         // to prop is where navigation go to
         // className here is prop via Link.jsx
         return (
-            <Link key={link.label} to={link.path} className="mb-3">
+            <Link
+                key={link.label}
+                to={link.path}
+                className="mb-3"
+                activeClassName="font-bold border-l-4 border-blue-500 pl-2"
+            >
                 {link.label}
             </Link>);
     });
 
   return (
-    <div className="sticky top-0 overflow-y-scrolll flex flex-col">
+    <div className="sticky top-0 overflow-y-scroll flex flex-col items-start">
         {renderedLinks}
     </div>
   )
