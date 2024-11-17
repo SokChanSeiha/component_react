@@ -15,7 +15,6 @@ function ModalPage() {
             Open Modal
         </Button>
         {showModal && <Modal/>}
-        
     </div>
   )
 }
