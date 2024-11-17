@@ -14,7 +14,7 @@ function ModalPage() {
     }
     const actionBar = (
         <div>
-            <Button onClick={handleClick} primary >I Accept</Button>
+            <Button onClick={handleClose} primary >I Accept</Button>
         </div>
     );
     const modal = (
